@@ -1,21 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { Welcome } from './src/pages/Welcome';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <Welcome />
   );
 }
+// No reactive native não podemos retornar mais de uma tag no return
+// Por isso tem essa view encapsulando tudo
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
+
+// Link para o Layout do figma
+// https://www.figma.com/file/8Xyhx7nrNagrYGj4FcAtgj/PlantManager-(Copy)?node-id=0%3A1
