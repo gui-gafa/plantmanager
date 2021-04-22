@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { SafeAreaView,
+import {
+    SafeAreaView,
     Text,
     Image,
     TouchableOpacity,
@@ -12,9 +13,15 @@ import wateringImg from '../assets/watering.png';
 import { Button, ButtonInit } from '../components/ButtonInit';
 import colors from '../styles/colors';
 import fonts from '../styles/fonts';
-import {Entypo} from '@expo/vector-icons'
+import { Entypo } from '@expo/vector-icons'
+import { useNavigation } from '@react-navigation/core';
 
 export function Welcome() {
+    const navigation = useNavigation()
+
+    function handleStart() {
+        navigation.navigate('UserIdentification')
+    }
 
     return (
         <SafeAreaView style={styles.container}>
@@ -33,7 +40,7 @@ export function Welcome() {
                     Não esqueça mais de regar suas plantas.
                     Nós cuidamos de lembrar você sempre que precisar.
                 </Text>
-                <ButtonInit title={ <Entypo name='chevron-thin-left' size={24}/> } />
+                <ButtonInit title={<Entypo name='chevron-thin-left' size={24} />} onPress={handleStart} />
             </View>
         </SafeAreaView>
     )
@@ -57,14 +64,14 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         color: colors.heading,
         marginTop: 38,
-        marginBottom:10,
+        marginBottom: 10,
         fontFamily: fonts.heading
     },
     subtitle: {
         textAlign: 'center',
         fontSize: 18,
         paddingHorizontal: 20,
-        marginVertical:10,
+        marginVertical: 10,
         color: colors.heading,
         fontFamily: fonts.text
     },
